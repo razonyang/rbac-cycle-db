@@ -73,6 +73,14 @@ final class ItemsStorage implements ItemsStorageInterface
     /**
      * @inheritDoc
      */
+    public function exists(string $name): bool
+    {
+        return $this->get($name) !== null;
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function add(Item $item): void
     {
         $time = time();
